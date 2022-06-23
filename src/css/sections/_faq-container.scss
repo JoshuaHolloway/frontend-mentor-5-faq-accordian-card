@@ -1,0 +1,53 @@
+@use '../colors' as *;
+@use '../breakpoints' as *;
+
+> .faq-container {
+  $p: 7%;
+  padding: $p $p $p $p;
+
+  h1 {
+    margin-bottom: 20px;
+
+    @media (max-width: #{$break}) {
+      text-align: center;
+    }
+    @media (min-width: #{$break}) {
+    }
+  }
+
+  .accordian {
+    .item {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: solid 1px grey;
+      background: white;
+
+      .question {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.45rem;
+        cursor: pointer;
+
+        transition: all 0.2s ease;
+        &:hover {
+          color: $orange;
+        }
+
+        p {
+          padding-right: 0.8rem;
+        }
+        .arrow {
+          height: 20px;
+          fill: $text-primary;
+          // margin-right: 5px;
+        }
+      }
+
+      .answer {
+        height: 100px;
+        height: 0px;
+        color: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+}

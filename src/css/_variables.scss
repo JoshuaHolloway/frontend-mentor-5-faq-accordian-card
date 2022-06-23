@@ -1,0 +1,16 @@
+@use './breakpoints' as *;
+@use './colors' as *;
+
+$pad: 40px;
+$rad: 25px;
+$gutter: 10%;
+$min-width: 260px;
+
+:root {
+  --break: #{$break};
+  // --pad: #{$pad};
+  // --rad: #{$rad};
+  // --text-secondary: #{$text-secondary};
+  // --min-width: #{$min-width};
+  --orange: #{$orange};
+}

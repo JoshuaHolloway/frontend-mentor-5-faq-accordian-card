@@ -1,0 +1,54 @@
+> .img-container {
+  @media (max-width: #{$break}) {
+    text-align: center;
+    padding: 1rem;
+  }
+  @media (min-width: #{$break}) {
+    padding: 0;
+  }
+
+  position: relative;
+  > img {
+    position: absolute;
+
+    @media (max-width: #{$break}) {
+      &.bg {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.img {
+        width: 75%;
+        top: -120px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.box {
+        display: none;
+      }
+    }
+
+    @media (min-width: #{$break}) {
+      &.bg {
+        height: 200%;
+        left: -682px;
+        top: -65%;
+        clip-path: inset(32.5% 0% 0% 61.8%);
+      }
+
+      &.img {
+        left: -16%;
+        top: 14%;
+        clip-path: inset(0% 0% 0% 17%);
+      }
+
+      &.box {
+        position: absolute;
+        left: -19%;
+        top: 40%;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use 'scrollbar';
+@use 'colors' as c;
+@use 'fonts';
+@use 'variables' as *;
+@use 'breakpoints' as *;
+@use 'shadow';
+
+// ==============================================
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+
+  // outline: solid yellow 1px;
+}
+
+// ==============================================
+
+body {
+  #root {
+    background: c.$grad;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+
+    .app {
+      box-shadow: shadow.f(0);
+
+      @media (max-width: #{$break}) {
+        // Padding-top hack for position: absolute
+        margin-top: 150px;
+        margin-bottom: 50px;
+      }
+
+      display: flex;
+      @media (max-width: #{$break}) {
+        flex-direction: column;
+      }
+      @media (min-width: #{$break}) {
+        flex-direction: row;
+      }
+
+      // padding: $pad;
+      border-radius: $rad;
+      background: c.$card;
+
+      @media (max-width: #{$break}) {
+        > .img-container,
+        .faq-container {
+          width: 325px;
+        }
+
+        > .img-container {
+          height: 100px;
+        }
+
+        .faq-container {
+          // background: red;
+          height: 570px;
+        }
+      }
+
+      @media (min-width: #{$break}) {
+        > .img-container,
+        .faq-container {
+          height: 525px;
+          width: 500px;
+        }
+      }
+
+      @import './sections/img-container';
+      @import './sections/faq-container';
+    }
+  }
+}
+
+// ==============================================
